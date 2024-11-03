@@ -74,7 +74,7 @@ public class AdvancedAutoDisenchanter extends SlimefunItem implements EnergyNetC
         addItemHandler(onBreak());
         addItemSetting(useLevelLimit, levelLimit);
 
-        new BlockMenuPreset(getId(), "&c高级全自动驱魔机") {
+        new BlockMenuPreset(getId(), "&c高级全自动祛魔机") {
 
             @Override
             public void init() {
