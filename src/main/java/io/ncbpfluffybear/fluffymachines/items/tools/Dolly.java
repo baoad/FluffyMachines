@@ -35,6 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 public class Dolly extends SimpleSlimefunItem<ItemUseHandler> {
 
@@ -213,6 +214,7 @@ public class Dolly extends SimpleSlimefunItem<ItemUseHandler> {
                     }
 
                     ((InventoryHolder) chestBlock.getState()).getInventory().setStorageContents(bpContents[0]);
+                    Slimefun.getDatabaseManager().getProfileDataController().saveBackpackInventory(backpack, IntStream.range(0, backpack.getSize()).boxed().toArray(Integer[]::new));
                     dolly.setType(Material.MINECART);
                     Utils.send(p, "&a已放置箱子");
                 }
